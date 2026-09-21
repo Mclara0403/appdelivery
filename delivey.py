@@ -632,13 +632,10 @@ df = carregar_dados()
 
 colunas_necessarias = [
     "Marca",
-    "Modelo",
+    "Curso",
     "Ano",
-    "Cor",
-    "Placa",
-    "Quilometragem",
-    "Valor",
-    "Observações"
+    "Tipo de comida"
+    
 ]
 
 for coluna in colunas_necessarias:
@@ -668,7 +665,7 @@ df["Quilometragem"] = pd.to_numeric(
 st.sidebar.markdown(
 """
 <div class="logo-title">
-🚗 AutoCadastro
+ 🍔​ DiNós
 </div>
 
 <div class="logo-subtitle">
@@ -686,7 +683,7 @@ menu = st.sidebar.radio(
     [
         "🏠 Dashboard",
         "➕ Cadastrar Carro",
-        "🚙 Carros Cadastrados"
+        "🍔​ Carros Cadastrados"
     ]
 )
 
@@ -714,22 +711,20 @@ style="background-image: url('{IMAGEM_HERO}');">
 <div class="hero-content">
 
 <div class="hero-number">
-01.
+DiNós
 </div>
 
 <div class="hero-title">
-Sua frota.<br>
-Seu controle.
+Sua comida<br>
+Perto de Você
 </div>
 
 <div class="hero-text">
-Tenha todos os seus veículos organizados em um único lugar.<br>
-Cadastre, consulte e acompanhe sua frota de forma simples,
-rápida e profissional.
+Veja todos os vendedores de comidas do seu campus de forma mais acessível
 </div>
 
 <div class="hero-badge">
-🚗 GESTÃO INTELIGENTE
+🍔​ GESTÃO INTELIGENTE
 </div>
 
 </div>
@@ -742,11 +737,11 @@ rápida e profissional.
     st.markdown(
 """
 <div class="page-title">
-📊 Visão geral da sua frota
+📊 Visão geral dos vendedores
 </div>
 
 <div class="page-subtitle">
-Acompanhe seus veículos e mantenha tudo organizado.
+Veja quem trouxe delícias hoje
 </div>
 """,
         unsafe_allow_html=True
@@ -769,7 +764,7 @@ f"""
 <div class="info-card">
 
 <div class="card-icon">
-🚗
+🍔​
 </div>
 
 <div class="card-number">
@@ -817,7 +812,7 @@ f"""
 <div class="info-card">
 
 <div class="card-icon">
-🛣️
+🍔​
 </div>
 
 <div class="card-number">
@@ -1001,7 +996,7 @@ Adicione um novo veículo ao seu AutoCadastro PRO.
 
 
             st.success(
-                "🚗 Veículo cadastrado com sucesso!"
+                "🍔​ Veículo cadastrado com sucesso!"
             )
 
 
@@ -1042,7 +1037,7 @@ Consulte e pesquise todos os veículos cadastrados.
 <div class="dark-card">
 
 <h2>
-🚗 Nenhum veículo cadastrado
+🍔​ Nenhum veículo cadastrado
 </h2>
 
 <p>
@@ -1141,7 +1136,7 @@ st.markdown(
 """
 <div class="footer">
 
-🚗 AutoCadastro PRO<br>
+🍔​ AutoCadastro PRO<br>
 Gestão inteligente de veículos
 
 </div>
