@@ -7,13 +7,13 @@ import os
 # =========================================================
 
 st.set_page_config(
-    page_title="DiNós",
-    page_icon="🍔​",
+    page_title="DiNós Delivery",
+    page_icon="🍔",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-ARQUIVO = "vendedor.csv"
+ARQUIVO = "pedidos.csv"
 
 
 # =========================================================
@@ -22,13 +22,13 @@ ARQUIVO = "vendedor.csv"
 
 IMAGEM_HERO = (
     "https://images.unsplash.com/"
-    "photo-1492144534655-ae79c964c9d7"
+    "photo-1504674900247-0877df9cc836"
     "?auto=format&fit=crop&w=1800&q=90"
 )
 
-IMAGEM_FROTA = (
+IMAGEM_DELIVERY = (
     "https://images.unsplash.com/"
-    "photo-1502877338535-766e1452684a"
+    "photo-1521305916504-4a1121188589"
     "?auto=format&fit=crop&w=1200&q=85"
 )
 
@@ -63,9 +63,9 @@ FUNDO PRINCIPAL
     background:
         linear-gradient(
             135deg,
-            #F0F0E5 0%,
-            #E1E4C8 50%,
-            #D4DCB5 100%
+            #FFF4E6 0%,
+            #FFE3C2 50%,
+            #FFD6A3 100%
         );
 }
 
@@ -89,12 +89,12 @@ SIDEBAR
     background:
         linear-gradient(
             180deg,
-            #162630,
-            #223944
+            #351A12,
+            #54291B
         );
 
     border-right:
-        2px solid #77864B;
+        2px solid #E77B36;
 }
 
 [data-testid="stSidebar"] * {
@@ -116,7 +116,7 @@ LOGO
 .logo-subtitle {
     font-size: 11px;
     font-weight: 700;
-    color: #BFCB9D !important;
+    color: #FFBD7A !important;
     letter-spacing: 1px;
 }
 
@@ -128,13 +128,13 @@ TÍTULOS
 .page-title {
     font-size: 38px;
     font-weight: 800;
-    color: #26311F !important;
+    color: #351A12 !important;
     margin-bottom: 5px;
 }
 
 .page-subtitle {
     font-size: 17px;
-    color: #46513B !important;
+    color: #70402D !important;
     margin-bottom: 30px;
 }
 
@@ -165,9 +165,9 @@ HERO
     background:
         linear-gradient(
             90deg,
-            rgba(14,28,38,0.97) 0%,
-            rgba(14,28,38,0.86) 45%,
-            rgba(14,28,38,0.18) 100%
+            rgba(45,20,12,0.97) 0%,
+            rgba(45,20,12,0.86) 45%,
+            rgba(45,20,12,0.18) 100%
         );
 }
 
@@ -184,7 +184,7 @@ HERO
 .hero-number {
     font-size: 70px;
     font-weight: 800;
-    color: #A4D080 !important;
+    color: #FF9A4D !important;
     line-height: 1;
 }
 
@@ -199,7 +199,7 @@ HERO
 
 .hero-text {
     font-size: 17px;
-    color: #E8EDDE !important;
+    color: #FFF0E4 !important;
 
     margin-top: 20px;
     line-height: 1.7;
@@ -214,7 +214,7 @@ HERO
 
     border-radius: 30px;
 
-    background: #6E8040;
+    background: #E56B25;
 
     color: #FFFFFF !important;
 
@@ -237,7 +237,7 @@ CARDS
     min-height: 170px;
 
     border:
-        1px solid rgba(111,128,63,0.30);
+        1px solid rgba(229,107,37,0.30);
 
     box-shadow:
         0 10px 25px rgba(0,0,0,0.08);
@@ -251,7 +251,7 @@ CARDS
     font-size: 34px;
     font-weight: 800;
 
-    color: #26311F !important;
+    color: #351A12 !important;
 
     margin-top: 10px;
 }
@@ -260,7 +260,7 @@ CARDS
     font-size: 14px;
     font-weight: 700;
 
-    color: #566248 !important;
+    color: #70402D !important;
 
     margin-top: 5px;
 }
@@ -274,8 +274,8 @@ CARD ESCURO
     background:
         linear-gradient(
             135deg,
-            #152631,
-            #233C48
+            #351A12,
+            #5B2C1C
         );
 
     border-radius: 24px;
@@ -292,7 +292,7 @@ CARD ESCURO
 }
 
 .dark-card p {
-    color: #E2E9DA !important;
+    color: #FFE7D3 !important;
     line-height: 1.7;
 }
 
@@ -303,14 +303,14 @@ FORMULÁRIO
 
 [data-testid="stForm"] {
     background:
-        rgba(255,255,255,0.85);
+        rgba(255,255,255,0.88);
 
     padding: 30px;
 
     border-radius: 25px;
 
     border:
-        1px solid #B8C391;
+        1px solid #E8B88E;
 
     box-shadow:
         0 10px 30px rgba(0,0,0,0.08);
@@ -318,7 +318,7 @@ FORMULÁRIO
 
 
 /* =========================================================
-LABELS DOS CAMPOS
+LABELS
 ========================================================= */
 
 [data-testid="stWidgetLabel"],
@@ -329,7 +329,7 @@ LABELS DOS CAMPOS
 .stNumberInput label,
 .stSelectbox label,
 .stTextArea label {
-    color: #26311F !important;
+    color: #351A12 !important;
 
     opacity: 1 !important;
 
@@ -348,13 +348,13 @@ INPUTS
 .stTextArea textarea {
     background-color: #FFFFFF !important;
 
-    color: #202820 !important;
+    color: #302019 !important;
 
     -webkit-text-fill-color:
-        #202820 !important;
+        #302019 !important;
 
     border:
-        2px solid #7C8956 !important;
+        2px solid #D58B5A !important;
 
     border-radius: 12px !important;
 
@@ -367,36 +367,31 @@ INPUTS
 .stNumberInput input:focus,
 .stTextArea textarea:focus {
     border:
-        2px solid #556B2F !important;
+        2px solid #D85B1F !important;
 
     box-shadow:
-        0 0 0 3px rgba(85,107,47,0.15) !important;
+        0 0 0 3px rgba(216,91,31,0.15) !important;
 }
 
 input::placeholder,
 textarea::placeholder {
-    color: #6A7060 !important;
+    color: #76655B !important;
     opacity: 1 !important;
 }
 
 
 /* =========================================================
-SELECTBOX - CORREÇÃO DEFINITIVA
+SELECTBOX
 ========================================================= */
 
-/* Caixa principal */
-
 [data-baseweb="select"] > div {
-    background-color: #2F323C !important;
+    background-color: #3B2922 !important;
 
     border:
-        2px solid #687548 !important;
+        2px solid #C97843 !important;
 
     border-radius: 12px !important;
 }
-
-
-/* TEXTO DO VEÍCULO SELECIONADO */
 
 [data-baseweb="select"] > div * {
     color: #FFFFFF !important;
@@ -407,9 +402,6 @@ SELECTBOX - CORREÇÃO DEFINITIVA
     opacity: 1 !important;
 }
 
-
-/* Input interno */
-
 [data-baseweb="select"] input {
     color: #FFFFFF !important;
 
@@ -417,43 +409,34 @@ SELECTBOX - CORREÇÃO DEFINITIVA
         #FFFFFF !important;
 }
 
-
-/* Valor selecionado */
-
 [data-baseweb="select"] [class*="singleValue"] {
     color: #FFFFFF !important;
 }
-
-
-/* Seta */
 
 [data-baseweb="select"] svg {
     fill: #FFFFFF !important;
     color: #FFFFFF !important;
 }
 
-
-/* Hover */
-
 [data-baseweb="select"] > div:hover {
-    border-color: #A4B66A !important;
+    border-color: #FF9A4D !important;
 }
 
 
 /* =========================================================
-MENU ABERTO DO SELECTBOX
+MENU DO SELECTBOX
 ========================================================= */
 
 [data-baseweb="popover"] {
-    background-color: #2F323C !important;
+    background-color: #3B2922 !important;
 }
 
 [data-baseweb="menu"] {
-    background-color: #2F323C !important;
+    background-color: #3B2922 !important;
 }
 
 [role="option"] {
-    background-color: #2F323C !important;
+    background-color: #3B2922 !important;
 
     color: #FFFFFF !important;
 
@@ -462,7 +445,7 @@ MENU ABERTO DO SELECTBOX
 }
 
 [role="option"]:hover {
-    background-color: #52632D !important;
+    background-color: #B94F1C !important;
 
     color: #FFFFFF !important;
 }
@@ -477,8 +460,8 @@ div[data-testid="stFormSubmitButton"] > button {
     background:
         linear-gradient(
             135deg,
-            #52632D,
-            #788B48
+            #D9571F,
+            #F0803C
         ) !important;
 
     color: #FFFFFF !important;
@@ -497,7 +480,7 @@ div[data-testid="stFormSubmitButton"] > button {
     font-weight: 700 !important;
 
     box-shadow:
-        0 8px 18px rgba(82,99,45,0.25);
+        0 8px 18px rgba(217,87,31,0.25);
 }
 
 .stButton > button:hover,
@@ -505,8 +488,8 @@ div[data-testid="stFormSubmitButton"] > button:hover {
     background:
         linear-gradient(
             135deg,
-            #3E4E23,
-            #647738
+            #B94112,
+            #D96424
         ) !important;
 
     color: #FFFFFF !important;
@@ -528,7 +511,7 @@ TABELA
     overflow: hidden;
 
     border:
-        1px solid #B8C391;
+        1px solid #E5B187;
 }
 
 
@@ -541,7 +524,7 @@ RODAPÉ
 
     text-align: center;
 
-    color: #536044 !important;
+    color: #70402D !important;
 
     font-size: 14px;
 
@@ -588,13 +571,14 @@ RESPONSIVO
 def carregar_dados():
 
     colunas = [
-        "Nome",
-        "Curso",
-        "Ano",
-        "Cor",
-        "Placa",
-        "Quilometragem",
+        "Cliente",
+        "Restaurante",
+        "Pedido",
+        "Categoria",
+        "Quantidade",
         "Valor",
+        "Endereço",
+        "Status",
         "Observações"
     ]
 
@@ -604,7 +588,12 @@ def carregar_dados():
 
             dados = pd.read_csv(ARQUIVO)
 
-            return dados
+            for coluna in colunas:
+
+                if coluna not in dados.columns:
+                    dados[coluna] = ""
+
+            return dados[colunas]
 
         except Exception:
 
@@ -628,23 +617,6 @@ def salvar_dados(dados):
 df = carregar_dados()
 
 
-# Garantir colunas necessárias
-
-colunas_necessarias = [
-    "Marca",
-    "Curso",
-    "Ano",
-    "Tipo de comida"
-    
-]
-
-for coluna in colunas_necessarias:
-
-    if coluna not in df.columns:
-
-        df[coluna] = ""
-
-
 # Converter valores
 
 df["Valor"] = pd.to_numeric(
@@ -652,8 +624,8 @@ df["Valor"] = pd.to_numeric(
     errors="coerce"
 ).fillna(0)
 
-df["Quilometragem"] = pd.to_numeric(
-    df["Quilometragem"],
+df["Quantidade"] = pd.to_numeric(
+    df["Quantidade"],
     errors="coerce"
 ).fillna(0)
 
@@ -665,11 +637,11 @@ df["Quilometragem"] = pd.to_numeric(
 st.sidebar.markdown(
 """
 <div class="logo-title">
- 🍔​ DiNós
+ 🍔 DiNós
 </div>
 
 <div class="logo-subtitle">
-GESTÃO INTELIGENTE DE VEÍCULOS
+DELIVERY RÁPIDO E INTELIGENTE
 </div>
 """,
     unsafe_allow_html=True
@@ -682,8 +654,8 @@ menu = st.sidebar.radio(
     "NAVEGAÇÃO",
     [
         "🏠 Dashboard",
-        "➕ Cadastrar Carro",
-        "🍔​ Carros Cadastrados"
+        "➕ Novo Pedido",
+        "🍔 Pedidos Cadastrados"
     ]
 )
 
@@ -691,7 +663,7 @@ menu = st.sidebar.radio(
 st.sidebar.markdown("---")
 
 st.sidebar.caption(
-    "AutoCadastro PRO • 2026"
+    "DiNós Delivery • 2026"
 )
 
 
@@ -716,15 +688,16 @@ DiNós
 
 <div class="hero-title">
 Sua comida<br>
-Perto de Você
+do seu jeito
 </div>
 
 <div class="hero-text">
-Veja todos os vendedores de comidas do seu campus de forma mais acessível
+Peça suas comidas favoritas, acompanhe seus pedidos
+e tenha tudo organizado em um só lugar.
 </div>
 
 <div class="hero-badge">
-🍔​ GESTÃO INTELIGENTE
+🍔 DELIVERY RÁPIDO
 </div>
 
 </div>
@@ -733,25 +706,27 @@ Veja todos os vendedores de comidas do seu campus de forma mais acessível
 """,
         unsafe_allow_html=True
     )
+
 
     st.markdown(
 """
 <div class="page-title">
-📊 Visão geral dos vendedores
+📊 Visão geral dos pedidos
 </div>
 
 <div class="page-subtitle">
-Veja quem trouxe delícias hoje
+Acompanhe os pedidos realizados no seu delivery
 </div>
 """,
         unsafe_allow_html=True
     )
 
-    total_carros = len(df)
+
+    total_pedidos = len(df)
 
     valor_total = df["Valor"].sum()
 
-    km_total = df["Quilometragem"].sum()
+    total_itens = df["Quantidade"].sum()
 
 
     col1, col2, col3 = st.columns(3)
@@ -764,15 +739,15 @@ f"""
 <div class="info-card">
 
 <div class="card-icon">
-🍔​
+🍔
 </div>
 
 <div class="card-number">
-{total_carros}
+{total_pedidos}
 </div>
 
 <div class="card-label">
-VEÍCULOS CADASTRADOS
+PEDIDOS REALIZADOS
 </div>
 
 </div>
@@ -796,7 +771,7 @@ R$ {valor_total:,.2f}
 </div>
 
 <div class="card-label">
-VALOR TOTAL DA FROTA
+VALOR TOTAL DOS PEDIDOS
 </div>
 
 </div>
@@ -812,15 +787,15 @@ f"""
 <div class="info-card">
 
 <div class="card-icon">
-🍔​
+🍟
 </div>
 
 <div class="card-number">
-{km_total:,.0f} km
+{total_itens:,.0f}
 </div>
 
 <div class="card-label">
-QUILOMETRAGEM REGISTRADA
+ITENS PEDIDOS
 </div>
 
 </div>
@@ -842,17 +817,18 @@ QUILOMETRAGEM REGISTRADA
 <div class="dark-card">
 
 <h2>
-🚀 Controle profissional
+🚀 Delivery na palma da mão
 </h2>
 
 <p>
-O AutoCadastro PRO permite manter todos os seus veículos
-organizados em um único lugar.
+O DiNós Delivery permite organizar seus pedidos
+de comida em um único lugar.
 </p>
 
 <p>
-Cadastre, consulte, pesquise e acompanhe as informações
-da sua frota de maneira moderna e profissional.
+Cadastre pedidos, consulte clientes, pesquise pedidos
+e acompanhe o status de cada entrega de maneira simples,
+moderna e profissional.
 </p>
 
 </div>
@@ -864,25 +840,25 @@ da sua frota de maneira moderna e profissional.
     with coluna2:
 
         st.image(
-            IMAGEM_FROTA,
+            IMAGEM_DELIVERY,
             use_container_width=True
         )
 
 
 # =========================================================
-# CADASTRAR CARRO
+# NOVO PEDIDO
 # =========================================================
 
-elif menu == "➕ Cadastrar Carro":
+elif menu == "➕ Novo Pedido":
 
     st.markdown(
 """
 <div class="page-title">
-➕ Novo veículo
+➕ Novo pedido
 </div>
 
 <div class="page-subtitle">
-Adicione um novo veículo ao seu AutoCadastro PRO.
+Registre um novo pedido no DiNós Delivery.
 </div>
 """,
         unsafe_allow_html=True
@@ -890,7 +866,7 @@ Adicione um novo veículo ao seu AutoCadastro PRO.
 
 
     with st.form(
-        "cadastro_carro",
+        "cadastro_pedido",
         clear_on_submit=True
     ):
 
@@ -899,33 +875,29 @@ Adicione um novo veículo ao seu AutoCadastro PRO.
 
         with col1:
 
-            marca = st.text_input(
-                "🏷️ Marca"
+            cliente = st.text_input(
+                "👤 Nome do cliente"
             )
 
-            modelo = st.text_input(
-                "🚗 Modelo"
+            restaurante = st.text_input(
+                "🏪 Restaurante"
             )
 
-            ano = st.number_input(
-                "📅 Ano",
-                min_value=1900,
-                max_value=2035,
-                value=2024,
-                step=1
+            pedido = st.text_input(
+                "🍔 Pedido"
             )
 
-            cor = st.selectbox(
-                "🎨 Cor",
+            categoria = st.selectbox(
+                "🍴 Categoria",
                 [
-                    "Verde Oliva",
-                    "Preto",
-                    "Branco",
-                    "Prata",
-                    "Cinza",
-                    "Vermelho",
-                    "Azul",
-                    "Amarelo",
+                    "Hambúrguer",
+                    "Pizza",
+                    "Comida Brasileira",
+                    "Japonesa",
+                    "Açaí",
+                    "Lanches",
+                    "Sobremesa",
+                    "Bebidas",
                     "Outro"
                 ]
             )
@@ -933,51 +905,66 @@ Adicione um novo veículo ao seu AutoCadastro PRO.
 
         with col2:
 
-            placa = st.text_input(
-                "🔢 Placa"
-            )
-
-            quilometragem = st.number_input(
-                "🛣️ Quilometragem",
-                min_value=0,
-                value=0,
-                step=100
+            quantidade = st.number_input(
+                "🔢 Quantidade de itens",
+                min_value=1,
+                value=1,
+                step=1
             )
 
             valor = st.number_input(
-                "💰 Valor do Veículo",
+                "💰 Valor do pedido",
                 min_value=0.0,
                 value=0.0,
-                step=1000.0
+                step=5.0
             )
 
-            observacoes = st.text_area(
-                "📝 Observações"
+            endereco = st.text_input(
+                "📍 Endereço de entrega"
             )
+
+            status = st.selectbox(
+                "🚴 Status do pedido",
+                [
+                    "Recebido",
+                    "Em preparo",
+                    "Saiu para entrega",
+                    "Entregue",
+                    "Cancelado"
+                ]
+            )
+
+
+        observacoes = st.text_area(
+            "📝 Observações",
+            placeholder="Ex.: Sem cebola, adicionar molho, tocar campainha..."
+        )
 
 
         cadastrar = st.form_submit_button(
-            "💾 CADASTRAR VEÍCULO"
+            "🍔 CADASTRAR PEDIDO"
         )
 
 
     if cadastrar:
 
         if (
-            marca.strip()
-            and modelo.strip()
-            and placa.strip()
+            cliente.strip()
+            and restaurante.strip()
+            and pedido.strip()
+            and endereco.strip()
         ):
 
-            novo_carro = pd.DataFrame(
+            novo_pedido = pd.DataFrame(
                 [{
-                    "Marca": marca.strip(),
-                    "Modelo": modelo.strip(),
-                    "Ano": int(ano),
-                    "Cor": cor,
-                    "Placa": placa.strip().upper(),
-                    "Quilometragem": int(quilometragem),
+                    "Cliente": cliente.strip(),
+                    "Restaurante": restaurante.strip(),
+                    "Pedido": pedido.strip(),
+                    "Categoria": categoria,
+                    "Quantidade": int(quantidade),
                     "Valor": float(valor),
+                    "Endereço": endereco.strip(),
+                    "Status": status,
                     "Observações": observacoes.strip()
                 }]
             )
@@ -986,7 +973,7 @@ Adicione um novo veículo ao seu AutoCadastro PRO.
             df = pd.concat(
                 [
                     df,
-                    novo_carro
+                    novo_pedido
                 ],
                 ignore_index=True
             )
@@ -996,7 +983,7 @@ Adicione um novo veículo ao seu AutoCadastro PRO.
 
 
             st.success(
-                "🍔​ Veículo cadastrado com sucesso!"
+                "🍔 Pedido cadastrado com sucesso!"
             )
 
 
@@ -1006,24 +993,24 @@ Adicione um novo veículo ao seu AutoCadastro PRO.
         else:
 
             st.warning(
-                "⚠️ Preencha Marca, Modelo e Placa."
+                "⚠️ Preencha Cliente, Restaurante, Pedido e Endereço."
             )
 
 
 # =========================================================
-# CARROS CADASTRADOS
+# PEDIDOS CADASTRADOS
 # =========================================================
 
-elif menu == "🚙 Carros Cadastrados":
+elif menu == "🍔 Pedidos Cadastrados":
 
     st.markdown(
 """
 <div class="page-title">
-🚙 Minha frota
+🍔 Pedidos cadastrados
 </div>
 
 <div class="page-subtitle">
-Consulte e pesquise todos os veículos cadastrados.
+Consulte, pesquise e gerencie todos os pedidos.
 </div>
 """,
         unsafe_allow_html=True
@@ -1037,12 +1024,12 @@ Consulte e pesquise todos os veículos cadastrados.
 <div class="dark-card">
 
 <h2>
-🍔​ Nenhum veículo cadastrado
+🍔 Nenhum pedido cadastrado
 </h2>
 
 <p>
-Sua garagem ainda está vazia.
-Cadastre seu primeiro veículo para começar.
+Ainda não existem pedidos registrados.
+Cadastre o primeiro pedido para começar.
 </p>
 
 </div>
@@ -1054,8 +1041,8 @@ Cadastre seu primeiro veículo para começar.
     else:
 
         busca = st.text_input(
-            "🔎 Pesquisar veículo",
-            placeholder="Digite marca, modelo, placa ou cor..."
+            "🔎 Pesquisar pedido",
+            placeholder="Digite cliente, restaurante, pedido, endereço ou status..."
         )
 
 
@@ -1091,25 +1078,25 @@ Cadastre seu primeiro veículo para começar.
         st.markdown("<br>", unsafe_allow_html=True)
 
 
-        opcoes_carros = df.index.tolist()
+        opcoes_pedidos = df.index.tolist()
 
 
-        carro_excluir = st.selectbox(
-            "🗑️ Selecione um veículo para excluir",
-            options=opcoes_carros,
+        pedido_excluir = st.selectbox(
+            "🗑️ Selecione um pedido para excluir",
+            options=opcoes_pedidos,
             format_func=lambda indice:
-                f"{df.loc[indice, 'Marca']} "
-                f"{df.loc[indice, 'Modelo']} - "
-                f"{df.loc[indice, 'Placa']}"
+                f"{df.loc[indice, 'Cliente']} - "
+                f"{df.loc[indice, 'Pedido']} - "
+                f"R$ {df.loc[indice, 'Valor']:.2f}"
         )
 
 
         if st.button(
-            "🗑️ EXCLUIR VEÍCULO"
+            "🗑️ EXCLUIR PEDIDO"
         ):
 
             df = df.drop(
-                carro_excluir
+                pedido_excluir
             )
 
             df = df.reset_index(
@@ -1121,7 +1108,7 @@ Cadastre seu primeiro veículo para começar.
 
 
             st.success(
-                "🚗 Veículo excluído com sucesso!"
+                "🍔 Pedido excluído com sucesso!"
             )
 
 
@@ -1136,8 +1123,8 @@ st.markdown(
 """
 <div class="footer">
 
-🍔​ AutoCadastro PRO<br>
-Gestão inteligente de veículos
+🍔 DiNós Delivery<br>
+Comida boa, pedido fácil, entrega rápida.
 
 </div>
 """,
